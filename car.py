@@ -1,14 +1,13 @@
-from carComponents.engine import *
-from carComponents.battery import *
-from carComponents.tyres import *
 from interfaces import IServiceable
-from car_factory import CarFactory
 
 
-class Car(CarFactory, IServiceable):
+
+class Car(IServiceable):
     
-    def __init__(self, engine, tyres, battery):
+    def __init__(self, engine, battery):
         self.engine = engine
-        self.tyres = tyres
         self.battery = battery
         
+
+    def needs_service(self):
+        return self.engine.needs_service() or self.battery.needs_service()
