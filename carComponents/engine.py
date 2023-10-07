@@ -1,9 +1,8 @@
-from interfaces import IServiceable
+from interfaces.serviceable import IServiceable
 from abc import ABC
 
-class Engine(ABC, IServiceable):
+class Engine(ABC):
     
-    @abstractmethod
     def needs_service(self):
         pass
     

@@ -1,9 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\carComponents",
-    "\\interfaces"
+    "\\test"
   ],
-  "SelectedNode": "\\car_factory.py",
+  "SelectedNode": "\\test",
   "PreviewInSolutionExplorer": false
 }

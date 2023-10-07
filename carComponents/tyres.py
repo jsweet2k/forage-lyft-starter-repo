@@ -1,8 +1,7 @@
-from interfaces import IServiceable
+from interfaces.serviceable import IServiceable
 from abc import ABC
 
-class Tyres(ABC, IServiceable):
+class Tyres(ABC):
     
-    @abstractmethod
     def needs_service(self):
         pass

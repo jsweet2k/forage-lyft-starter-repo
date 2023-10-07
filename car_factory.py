@@ -1,10 +1,6 @@
-from abc import ABC, abstractmethod
 from datetime import datetime
-from logging import warn
-from carComponents import *
-
 from car import Car
-from carComponents.battery import Battery, NubbinBattery, SpindlerBattery
+from carComponents.battery import NubbinBattery, SpindlerBattery
 from carComponents.engine import CapuletEngine, SternmanEngine, WilloughbyEngine
 
 class CarFactory:

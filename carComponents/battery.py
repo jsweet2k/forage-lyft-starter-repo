@@ -1,9 +1,8 @@
-from interfaces import IServiceable
+from interfaces.serviceable import IServiceable
 from abc import ABC
 
-class Battery(ABC, IServiceable):
+class Battery(ABC):
     
-    @abstractmethod
     def needs_service(self):
         pass
 

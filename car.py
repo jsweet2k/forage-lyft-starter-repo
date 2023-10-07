@@ -1,4 +1,4 @@
-from interfaces import IServiceable
+from interfaces.serviceable import IServiceable
 
 
 
