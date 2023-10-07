@@ -6,6 +6,8 @@ from car_factory import CarFactory
 from car import Car
 from carComponents.battery import NubbinBattery, SpindlerBattery
 from carComponents.engine import CapuletEngine, SternmanEngine, WilloughbyEngine
+from carComponents.tyres import OctoprimeTyres, CarriganTyres
+from utils import increaseTyreWear
 
 
 
@@ -96,6 +98,34 @@ class TestCarCreation(unittest.TestCase):
         print("Does Engine need service: ", thovex.engine.needs_service())
         print("Does the car need servicing? : ", thovex.needs_service())
         self.assertTrue(thovex.needs_service())
+        
+    ## Tyres Test
+
+    def testTyresArrayFunctionality(self): # Test the array increase functionality
+        tyre = OctoprimeTyres([1,0.5,1,1])
+        
+        print("\n-------------\n Tyres Array Functionality Test")
+        print("Pre Increase: ",tyre.tyresWearArray)
+        
+        tyre.tyresWearArray = increaseTyreWear(tyre.tyresWearArray, 1, 0.5)
+        print("Post Increase: ", tyre.tyresWearArray) # Expected to increase array index 1 by 0.5
+
+    def testOctoprimeTyresNeedsService(self):
+        tyreThatDoesntNeedService = OctoprimeTyres([1,0.2,0.5,0.9])
+        tyreThatDoesNeedService = OctoprimeTyres([1,1,0.5,0.6])
+        
+        print("\n-------------\n Ocotoprime Tyres Needs Service Test")
+        print("Expected: False -> Tyre that doesnt need service: ", tyreThatDoesntNeedService.needs_service())
+        print("Expected: True -> Tyre that does need service: ", tyreThatDoesNeedService.needs_service())
+        
+    def testCarriganTyresNeedsService(self):
+        tyreThatDoesntNeedService = CarriganTyres([0.5,0.2,0.5,0.6])
+        tyreThatDoesNeedService = CarriganTyres([0.4,0.1,0.5,0.9])
+        
+        print("\n-------------\n Carrigan Tyres Needs Service Test")
+        print("Expected: False -> Tyre that doesnt need service: ", tyreThatDoesntNeedService.needs_service())
+        print("Expected: True -> Tyre that does need service: ", tyreThatDoesNeedService.needs_service())
+
 
 
 
